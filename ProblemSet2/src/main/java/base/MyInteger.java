@@ -1,6 +1,7 @@
 package base;
 
 public class MyInteger {
+	
 	private int iValue;
 
 	public MyInteger(int iValue) {
@@ -15,38 +16,37 @@ public class MyInteger {
 	public void setiValue(int iValue) {
 		this.iValue = iValue;
 	}
-	public static void isEven(int iValue){
-		if (iValue % 2 == 0){
-			System.out.println("true");
-		}
-		else{
-			System.out.println("false");
-		}
+	
+	public static boolean isEven(int i){
+		return (i % 2 == 0)	? true : false;
 	}
-	public static void isOdd(int iValue){
-		if (iValue % 2 != 0){
-			System.out.println("true");
+	
+	public boolean isEven(){
+		return isEven(getiValue());
 		}
-		else{
-			System.out.println("false");
+	
+	public static boolean isOdd(int i){
+		return (i % 2 != 0) ? true : false;
 		}
+	
+	public boolean isOdd(){
+		return isOdd(getiValue());
 	}
-	public static void isPrime(int iValue){
-		    for(int i=2;i<iValue;i++) 
+	public static boolean isPrime(int i){
+		    for(int i2 = 2; i2 < i; i2++) 
 		    {
-		        if(iValue%i==0)
-		            System.out.println("false");;
+		        if(i%i2==0){
+		            return false;
+		        }
 		    }
-		    System.out.println("true");;
+		    return true;
 		}
-	public void equals(int MyInteger){
+	public boolean equals(int i){
 			
-		if (iValue == MyInteger){
-			System.out.println("true");
-		}
-		else{
-			System.out.println("false");
-		}
+		return i == this.getiValue();
 
+	}
+	public boolean isPrime(){
+		return isPrime(getiValue());
 	}
 	}
